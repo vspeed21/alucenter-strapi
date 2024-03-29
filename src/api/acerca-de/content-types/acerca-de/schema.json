@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "acerca_des",
+  "info": {
+    "singularName": "acerca-de",
+    "pluralName": "acerca-des",
+    "displayName": "Acerca de"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "blocks",
+      "required": true
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

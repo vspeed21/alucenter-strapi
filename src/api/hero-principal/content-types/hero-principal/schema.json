@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "hero_principals",
+  "info": {
+    "singularName": "hero-principal",
+    "pluralName": "hero-principals",
+    "displayName": "Hero Principal"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

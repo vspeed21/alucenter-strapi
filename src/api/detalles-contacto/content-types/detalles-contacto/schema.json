@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "detalles_contactos",
+  "info": {
+    "singularName": "detalles-contacto",
+    "pluralName": "detalles-contactos",
+    "displayName": "Detalles Contacto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "correo": {
+      "type": "email",
+      "required": true
+    },
+    "telefono": {
+      "type": "biginteger",
+      "required": true
+    },
+    "ubicacion": {
+      "type": "text",
+      "required": false
+    },
+    "facebook_user": {
+      "type": "string"
+    },
+    "instagram_user": {
+      "type": "string"
+    }
+  }
+}
