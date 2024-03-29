@@ -4,8 +4,7 @@
   "info": {
     "singularName": "producto",
     "pluralName": "productos",
-    "displayName": "Productos",
-    "description": ""
+    "displayName": "Productos"
   },
   "options": {
     "draftAndPublish": true
@@ -14,34 +13,30 @@
   "attributes": {
     "nombre": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "descripcion": {
       "type": "blocks",
       "required": true
     },
     "imagenes": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     },
     "precio": {
-      "type": "decimal",
-      "required": true
+      "type": "biginteger",
+      "required": true,
+      "default": "0"
     },
     "categoria": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::categoria.categoria",
       "inversedBy": "productos"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "nombre"
     }
   }
 }

@@ -4,11 +4,10 @@
   "info": {
     "singularName": "hero-contacto",
     "pluralName": "hero-contactos",
-    "displayName": "Hero contacto",
-    "description": ""
+    "displayName": "Hero contacto"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -21,12 +20,12 @@
       "required": true
     },
     "imagen": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }

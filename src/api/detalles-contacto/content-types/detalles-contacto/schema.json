@@ -4,31 +4,33 @@
   "info": {
     "singularName": "detalles-contacto",
     "pluralName": "detalles-contactos",
-    "displayName": "Detalles Contacto",
-    "description": ""
+    "displayName": "Detalles Contacto"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "correo": {
       "type": "email",
+      "default": "contacto@alucenterhn.com",
       "required": true
     },
     "telefono": {
-      "type": "biginteger",
+      "type": "integer",
       "required": true
     },
     "ubicacion": {
       "type": "text",
-      "required": false
+      "required": true
     },
     "facebook_user": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "instagram_user": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

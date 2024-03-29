@@ -13,13 +13,11 @@
   "attributes": {
     "nombre": {
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
     "descripcion": {
       "type": "text",
-      "required": true,
-      "unique": false
+      "required": true
     },
     "imagen": {
       "allowedTypes": [
@@ -31,8 +29,7 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "nombre",
-      "required": true
+      "targetField": "nombre"
     }
   }
 }
