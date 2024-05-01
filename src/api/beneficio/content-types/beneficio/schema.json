@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "beneficios",
+  "info": {
+    "singularName": "beneficio",
+    "pluralName": "beneficios",
+    "displayName": "Beneficios"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

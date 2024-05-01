@@ -820,6 +820,38 @@ export interface ApiAcercaDeAcercaDe extends Schema.SingleType {
   };
 }
 
+export interface ApiBeneficioBeneficio extends Schema.CollectionType {
+  collectionName: 'beneficios';
+  info: {
+    singularName: 'beneficio';
+    pluralName: 'beneficios';
+    displayName: 'Beneficios';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nombre: Attribute.String & Attribute.Required;
+    descripcion: Attribute.Text & Attribute.Required;
+    imagen: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::beneficio.beneficio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::beneficio.beneficio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoriaCategoria extends Schema.CollectionType {
   collectionName: 'categorias';
   info: {
@@ -864,6 +896,7 @@ export interface ApiDetallesContactoDetallesContacto extends Schema.SingleType {
     singularName: 'detalles-contacto';
     pluralName: 'detalles-contactos';
     displayName: 'Detalles Contacto';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -872,7 +905,7 @@ export interface ApiDetallesContactoDetallesContacto extends Schema.SingleType {
     correo: Attribute.Email &
       Attribute.Required &
       Attribute.DefaultTo<'contacto@alucenterhn.com'>;
-    telefono: Attribute.Integer & Attribute.Required;
+    telefono: Attribute.BigInteger & Attribute.Required;
     ubicacion: Attribute.Text & Attribute.Required;
     facebook_user: Attribute.String & Attribute.Required;
     instagram_user: Attribute.String & Attribute.Required;
@@ -964,6 +997,7 @@ export interface ApiProductoProducto extends Schema.CollectionType {
     singularName: 'producto';
     pluralName: 'productos';
     displayName: 'Productos';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -980,6 +1014,7 @@ export interface ApiProductoProducto extends Schema.CollectionType {
       'manyToOne',
       'api::categoria.categoria'
     >;
+    slug: Attribute.UID<'api::producto.producto', 'nombre'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1050,6 +1085,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::acerca-de.acerca-de': ApiAcercaDeAcercaDe;
+      'api::beneficio.beneficio': ApiBeneficioBeneficio;
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::detalles-contacto.detalles-contacto': ApiDetallesContactoDetallesContacto;
       'api::hero-contacto.hero-contacto': ApiHeroContactoHeroContacto;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "producto",
     "pluralName": "productos",
-    "displayName": "Productos"
+    "displayName": "Productos",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,12 +21,12 @@
       "required": true
     },
     "imagenes": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "precio": {
       "type": "biginteger",
@@ -37,6 +38,10 @@
       "relation": "manyToOne",
       "target": "api::categoria.categoria",
       "inversedBy": "productos"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre"
     }
   }
 }

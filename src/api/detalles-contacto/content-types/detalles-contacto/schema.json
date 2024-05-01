@@ -4,7 +4,8 @@
   "info": {
     "singularName": "detalles-contacto",
     "pluralName": "detalles-contactos",
-    "displayName": "Detalles Contacto"
+    "displayName": "Detalles Contacto",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,7 @@
       "required": true
     },
     "telefono": {
-      "type": "integer",
+      "type": "biginteger",
       "required": true
     },
     "ubicacion": {
